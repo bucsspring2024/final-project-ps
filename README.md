@@ -32,10 +32,10 @@ Your goal is to scam-message people and get money out of them. Every day you hav
 ### Features
 
 1. moveable character in minigame
-2. Options to click on screen
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+2. Options to click on
+3. obstacle collisions  
+4. game over screen
+5. start menu
 
 ### Classes
 
