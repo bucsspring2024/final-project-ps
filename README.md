@@ -2,18 +2,18 @@
 
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
-# << Project Title >>
-## CS110 Final Project  << Semester, Year >>
+# Scam 'Em
+## CS110 Final Project  Spring, 2024
 
 ## Team Members
 
-<< List team member names >>
+Parker Schafer
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+Your goal is to scam-message people and get money out of them. Every day you have a new target, the goal is to get all of their money from their bank account by the end of the day. You get a certain number of turns before the day ends. You have to look at both the trust and money gain for each option (have 3 options per turn). If trust falls too low, they find out its a scam and you automatically lose. But if your too cautious, you won't get all the money in time. You can get bonus money from minigames.
 
 ***    
 
@@ -31,8 +31,8 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
+1. moveable character in minigame
+2. Options to click on screen
 3. << Feature 3 >>
 4. << Feature 4 >>
 5. << Feature 5 >>
