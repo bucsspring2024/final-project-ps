@@ -7,7 +7,12 @@ class Prompt:
         self.y = y
         self.height = height
         self.width = width
-        self.prompts = ["Sell some bank information.", "Get someone in a ponzi scheme.", "Get someone caught in a lottery scam.", "Make a fake charity.",]
+        self.prompts = ["Sell some bank information.", 
+                        "Get someone in a ponzi scheme.", 
+                        "Get someone caught in a lottery scam.", 
+                        "Make a fake charity.",
+                        "Complete a phishing scam."
+                        ]
         self.prompt = [r.randrange(0,len(self.prompts))]
         self.promptvalue = r.randrange(0,1000)
         self.prompttrust = r.randrange(0, 10) * Target.fbitrustdif
