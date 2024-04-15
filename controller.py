@@ -23,4 +23,4 @@ class Controller:
                     exit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if self.prompt.collidepoint == event.pos():
-                        
+                        pass
