@@ -15,6 +15,6 @@ class Prompt:
                         ]
         self.prompt = [r.randrange(0,len(self.prompts))]
         self.promptvalue = r.randrange(0,1000)
-        self.prompttrust = r.randrange(0, 10) * Target.fbitrustdif
+        self.prompttrust = r.randrange(0, 10) * Target.fbi_trust_dif
     def __str__(self):
         self.str =  "{self.x}, {self.y}, {self.height}, {self.width}, {self.prompt}, {self.promptvalue}, {self.prompttrust}"

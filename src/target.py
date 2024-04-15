@@ -79,7 +79,7 @@ class Target:
 
         self.name = r.randrange(0, len(names))
         self.money = r.randrange(8000, 20000)
-        self.fbitrustdif = r.randrange(1,10)
+        self.fbi_trust_dif = r.randrange(1,10)
     def __str__(self):
-        self.str =  "{self.name}, {self.money}, {self.trustdif}"
+        self.str =  "{self.name}, {self.money}, {self.fbi_trust_dif}"
         
