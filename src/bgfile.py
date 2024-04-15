@@ -1,9 +1,12 @@
-class File_obj:
-    def __init__(self, x,y,height,width,image = "assets/file.png"):
-        self.x = x
-        self.y = y
-        self.height = height
-        self.width = width
-        self.image = image
+import pygame
+
+class File_obj(pygame.sprite.Sprite()):
+    def __init__(self, x, y, img="file.png"):
+         super().__init__()
+
+         self.image = pygame.image.load(img)
+         self.rect = self.image.get_rect()
+         self.rect.x = x
+         self.rect.y = y
     def __str__(self):
-        self.str =  "{self.x}, {self.y}, {self.height}, {self.width}, {self.image}"
+        self.str =  ""
