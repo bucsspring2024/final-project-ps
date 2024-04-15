@@ -1,11 +1,85 @@
 import random as r
 
 class Target:
-    def __init__(self, name, money, trustdif):
-        names = []
+    def __init__(self):
+        names = [
+        "Adrian Alvarez",
+        "Amelia Bautista",
+        "Bryant Cruz",
+        "Camila Delgado",
+        "Dante Esposito",
+        "Elena Fernandez",
+        "Felix Garcia",
+        "Giselle Hernandez",
+        "Hector Ibarra",
+        "Isabella Jimenez",
+        "Javier Lopez",
+        "Katalina Martinez",
+        "Lorenzo Nunez",
+        "Mariana Ortega",
+        "Nico Perez",
+        "Olivia Quintero",
+        "Pablo Ramirez",
+        "Quintessa Sanchez",
+        "Rafael Torres",
+        "Sofia Uribe",
+        "Thiago Vargas",
+        "Valentina Vega",
+        "Xavier Zamora",
+        "Ysabel Alvarez",
+        "Zane Bautista",
+        "Aisha Cruz",
+        "Benedict Delgado",
+        "Carmen Esposito",
+        "Dario Fernandez",
+        "Eva Garcia",
+        "Fabian Hernandez",
+        "Gabriela Ibarra",
+        "Hugo Jimenez",
+        "Isadora Kowalski",
+        "Julio Lopez",
+        "Kassandra Martinez",
+        "Luis Nunez",
+        "Mireya Ortiz",
+        "Natalio Perez",
+        "Octavia Quintero",
+        "Pedro Ramirez",
+        "Quintessa Sanchez",
+        "Rodrigo Torres",
+        "Selena Uribe",
+        "Tomas Vargas",
+        "Ursula Vega",
+        "Victor Zamora",
+        "Willa Alvarez",
+        "Ximena Bautista",
+        "Yasmin Cruz",
+        "Zara Delgado",
+        "Adam Esposito",
+        "Bianca Fernandez",
+        "Carlos Garcia",
+        "Dahlia Hernandez",
+        "Eduardo Ibarra",
+        "Fiona Jimenez",
+        "Gustavo Lopez",
+        "Hannah Martinez",
+        "Ignacio Nunez",
+        "Jacqueline Ortega",
+        "Kobe Perez",
+        "Lila Quintero",
+        "Manuel Ramirez",
+        "Nadia Sanchez",
+        "Oscar Torres",
+        "Paloma Uribe",
+        "Quentin Vargas",
+        "Rosa Vega",
+        "Sebastian Zamora",
+        "Talia Alvarez",
+        "Ulises Bautista"
+        ]
+
         self.name = r.randrange(0, len(names))
         self.money = r.randrange(8000, 20000)
-        self.trustdif = r.randrange(1,10)
+        self.fbitrustdif = r.randrange(1,10)
     def __str__(self):
-        self.str =  "{name} , {money} , {trustdif}"
+        self.str =  "{self.name}, {self.money}, {self.trustdif}"
         

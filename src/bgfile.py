@@ -1,9 +1,9 @@
 class File_obj:
-    def __init__(self, x,y,height,width,image = ""):
+    def __init__(self, x,y,height,width,image = "assets/file.png"):
         self.x = x
         self.y = y
         self.height = height
         self.width = width
-        self.image = "assets/file.png"
+        self.image = image
     def __str__(self):
         self.str =  "{self.x}, {self.y}, {self.height}, {self.width}, {self.image}"
