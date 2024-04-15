@@ -12,4 +12,4 @@ class Prompt:
         self.promptvalue = r.randrange(0,1000)
         self.prompttrust = r.randrange(0, 10) * Target.trustdif
     def __str__(self):
-        return "{self.x} , {self.y} , {self.height} , {self.width} , {self.prompt} , {self.promptvalue} , {self.prompttrust}"
+        self.str =  "{self.x} , {self.y} , {self.height} , {self.width} , {self.prompt} , {self.promptvalue} , {self.prompttrust}"

@@ -6,4 +6,4 @@ class File_obj:
         self.width = width
         self.image = "assets/file.png"
     def __str__(self):
-        return "{self.x}, {self.y}, {self.height}, {self.width}, {self.image}"
+        self.str =  "{self.x}, {self.y}, {self.height}, {self.width}, {self.image}"

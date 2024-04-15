@@ -7,5 +7,5 @@ class Target:
         self.money = r.randrange(8000, 20000)
         self.trustdif = r.randrange(1,10)
     def __str__(self):
-        return "{name} , {money} , {trustdif}"
+        self.str =  "{name} , {money} , {trustdif}"
         
