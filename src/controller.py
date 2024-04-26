@@ -1,7 +1,10 @@
 import pygame
-from src.pongplayer import Player
+import random
+from src.Dodge.pongplayer import Player
 from src.utility import *
-from src.pongball import Ball
+from src.Dodge.pongball import Ball
+from src.simon_button import Button
+from src.simonscore import SimonScore
 
 
 class Controller:
@@ -12,23 +15,45 @@ class Controller:
         
     def mainloop(self):
         #Controller.menuloop(self)
-        #Controller.simongameloop(self)
-        Controller.ponggameloop(self)
+        Controller.simongameloop(self)
+        #Controller.ponggameloop(self)
     
     def simongameloop(self):
+        # red_button = pygame.draw.rect(SIMONSCREEN, OFFRED, Button(WIDTH/13,HEIGHT/13,(WIDTH/13)*5,(HEIGHT/13)*5))
+        # blue_button = pygame.draw.rect(SIMONSCREEN, OFFBLUE, Button((WIDTH/2 + (WIDTH/13)),HEIGHT/13,(WIDTH/13)*5,(HEIGHT/13)*5))
+        # yellow_button = pygame.draw.rect(SIMONSCREEN, OFFYELLOW, Button(WIDTH/15,(HEIGHT/2 + HEIGHT/18),(WIDTH/13)*5,(HEIGHT/13)*5))
+        # green_button = pygame.draw.rect(SIMONSCREEN, OFFGREEN, Button((WIDTH/2 + WIDTH/13),(HEIGHT/2 + HEIGHT/18),(WIDTH/13)*5,(HEIGHT/13)*5))
+        red_button = Button(OFFRED, WIDTH/13,HEIGHT/13,(WIDTH/13)*5,(HEIGHT/13)*5)
+        blue_button = Button(OFFBLUE, (WIDTH/2 + (WIDTH/13)),HEIGHT/13,(WIDTH/13)*5,(HEIGHT/13)*5)
+        yellow_button = Button(OFFYELLOW, WIDTH/15,(HEIGHT/2 + HEIGHT/18),(WIDTH/13)*5,(HEIGHT/13)*5)
+        green_button = Button(OFFGREEN, (WIDTH/2 + WIDTH/13),(HEIGHT/2 + HEIGHT/18),(WIDTH/13)*5,(HEIGHT/13)*5)
+        buttons = [red_button,blue_button,yellow_button,green_button]
+        player = SimonScore()
+        player.update()
+        player.updatehighscore()
+        buttonchain =[]
         while(True):
+                # buttonchain.append(random.randint(0,3))
+                # for i in range(len(buttonchain)):
+                #     # buttons[buttonchain].light_up()
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
                         exit()
                     elif event.type == pygame.MOUSEBUTTONDOWN:
-                        pass
+                        if red_button.collidepoint(event.pos):
+                            player.points += 1
+                            player.update()
+                            player.updatehighscore()
+                    
                 pygame.display.update()
                 self.clock.tick(60)
                 
     def ponggameloop(self):
         p1 = Player(20,0,10,100,10,GREEN)
+        Player.display(p1)
         p2 = Player(570,0,10,100,10,GREEN)
+        Player.display(p2)
         ball = Ball(600//2,900//2,7,7,WHITE)
         players = [p1,p2]
         p1Score, p2Score = 0,0

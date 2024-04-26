@@ -10,7 +10,6 @@ class Player:
         self.speed = speed
         self.color = color
         self.pongRect = pygame.Rect(x,y,w,h)
-        self.pong = pygame.draw.rect(PONGSCREEN,self.color, self.pongRect)
     def display(self):
         self.pong = pygame.draw.rect(PONGSCREEN, self.color, self.pongRect)
     def update(self, y_movement):
