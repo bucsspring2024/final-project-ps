@@ -1,12 +1,7 @@
 import pygame
-# Ping Pong
-pygame.font.init()
-PONGSCREEN = pygame.display.set_mode((900,600))
-BLACK = (0,0,0)
-WHITE = (255,255,255)
-GREEN = (0,255,0)
 
 # Simon Game
+pygame.font.init()
 FONT = pygame.font.Font('freesansbold.ttf', 30)
 WIDTH, HEIGHT = 600,600
 SIMONSCREEN = pygame.display.set_mode((WIDTH,HEIGHT))
@@ -18,3 +13,5 @@ OFFYELLOW = (204, 204, 0)
 ONYELLOW = (240, 240, 0)
 OFFGREEN = (0, 179, 0)
 ONGREEN = (0, 230, 0)
+OFFCOLORS = [OFFRED,OFFBLUE,OFFYELLOW,OFFGREEN]
+ONCOLORS = [ONRED,ONBLUE,ONYELLOW,ONGREEN]

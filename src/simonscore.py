@@ -4,17 +4,24 @@ from src.utility import *
 class SimonScore:
     def __init__(self, points=0):
         self.points = points
-        self.text1 = "Total Points: " + str(self.points)
+        self.text1 = "Total Points: "
         self.text2 = "Highscore: "
         self.file = open("src/highscore.txt", "w")
         self.file.write("0")
         self.file.close()
     def update(self):
-        text = FONT.render(self.text1, True, "white")
+        """
+        Rewrites and Displays new score to the score counter on screen.
+        """
+        new_score = str(self.points)
+        text = FONT.render(self.text1 + new_score, True, "white")
         SIMONSCREEN.fill(("black"), (WIDTH/13,10,250,25))
         SIMONSCREEN.blit(text, (WIDTH/13,10))
         
     def updatehighscore(self):
+        """
+        Writes new highscore to a file and retrieves it then updates highscore ccounter on screen.
+        """
         f = open("src/highscore.txt", "r")
         highscore = f.read()
         f.close()
