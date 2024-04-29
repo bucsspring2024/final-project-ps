@@ -2,7 +2,7 @@ import pygame
 from src.utility import *
 
 class Button():
-    def __init__(self,color,x,y,w,h):
+    def __init__(self,color,x,y,w=(WIDTH/13)*5,h=(HEIGHT/13)*5):
         self.rect = pygame.Rect(x,y,w,h)
         self.color = color
     def draw(self, screen=SIMONSCREEN):
@@ -26,20 +26,28 @@ class Button():
         """
         Lights up the Button object to a brighter color and turns it off after a delay.
         """
-        if self.color == OFFRED:
-            self.color = ONRED
-        elif self.color == OFFBLUE:
-            self.color = ONBLUE
-        elif self.color == OFFYELLOW:
-            self.color = ONYELLOW
-        elif self.color == OFFGREEN:
-            self.color = ONGREEN
+        for color in OFFCOLORS:
+            if self.color == color:
+                self.color = ONCOLORS[OFFCOLORS.index(color)]
+        # if self.color == OFFRED:
+        #     self.color = ONRED
+        # elif self.color == OFFBLUE:
+        #     self.color = ONBLUE
+        # elif self.color == OFFYELLOW:
+        #     self.color = ONYELLOW
+        # elif self.color == OFFGREEN:
+        #     self.color = ONGREEN
     def light_off(self):
-        if self.color == ONRED:
-            self.color = OFFRED
-        elif self.color == ONBLUE:
-            self.color = OFFBLUE
-        elif self.color == ONYELLOW:
-            self.color = OFFYELLOW
-        elif self.color == ONGREEN:
-            self.color = OFFGREEN
+        for color in ONCOLORS:
+            if self.color == color:
+                self.color = OFFCOLORS[ONCOLORS.index(color)]
+        # if self.color == ONRED:
+        #     self.color = OFFRED
+        # elif self.color == ONBLUE:
+        #     self.color = OFFBLUE
+        # elif self.color == ONYELLOW:
+        #     self.color = OFFYELLOW
+        # elif self.color == ONGREEN:
+        #     self.color = OFFGREEN
+            
+        
