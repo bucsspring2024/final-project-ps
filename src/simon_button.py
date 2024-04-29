@@ -29,25 +29,9 @@ class Button():
         for color in OFFCOLORS:
             if self.color == color:
                 self.color = ONCOLORS[OFFCOLORS.index(color)]
-        # if self.color == OFFRED:
-        #     self.color = ONRED
-        # elif self.color == OFFBLUE:
-        #     self.color = ONBLUE
-        # elif self.color == OFFYELLOW:
-        #     self.color = ONYELLOW
-        # elif self.color == OFFGREEN:
-        #     self.color = ONGREEN
     def light_off(self):
         for color in ONCOLORS:
             if self.color == color:
                 self.color = OFFCOLORS[ONCOLORS.index(color)]
-        # if self.color == ONRED:
-        #     self.color = OFFRED
-        # elif self.color == ONBLUE:
-        #     self.color = OFFBLUE
-        # elif self.color == ONYELLOW:
-        #     self.color = OFFYELLOW
-        # elif self.color == ONGREEN:
-        #     self.color = OFFGREEN
             
         

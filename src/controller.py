@@ -77,10 +77,10 @@ class Controller:
                                 current_button_chain.pop(0) 
                                 if not current_button_chain:  
                                     button_chain.append(random.choice(buttons))
+                                    player.points += 1
+                                    player.update()
+                                    player.updatehighscore()
                                     new_sequence = True
-                    player.points += 1
-                    player.update()
-                    player.updatehighscore()
             pygame.display.update()
             self.clock.tick(60)
     def menuloop(self):
