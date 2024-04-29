@@ -7,7 +7,7 @@ from src.simonscore import SimonScore
 class Controller:
     def __init__(self):
         self.clock = pygame.time.Clock()
-        self.difficulty = 550
+        self.difficulty = 200
 
         
         
@@ -26,10 +26,15 @@ class Controller:
         green_button = Button(OFFGREEN, (WIDTH/2 + WIDTH/13),(HEIGHT/2 + HEIGHT/18))
         buttons = [red_button,blue_button,yellow_button,green_button]
         for button in buttons:
-            button.draw()
+            # button.draw()
+            pygame.draw.rect(SIMONSCREEN, button.color, button)
         player = SimonScore()
         player.update()
+        SIMONSCREEN.fill(("black"), (WIDTH/13,10,250,25))
+        SIMONSCREEN.blit(player.text, (WIDTH/13,10))
         player.updatehighscore()
+        SIMONSCREEN.fill(("black"), (WIDTH/2 + WIDTH/13, 10, 250,25))
+        SIMONSCREEN.blit(player.text, (WIDTH/2 + WIDTH/13,10))
         button_chain =[random.choice(buttons)]
         current_button_chain = button_chain
         new_sequence = True
@@ -40,19 +45,17 @@ class Controller:
                 current_button_chain = button_chain[:]
                 new_sequence = False
                 pygame.time.wait(1000)
-                sequencing = True
-                while(sequencing):
-                    for button in button_chain:
-                        button.light_up()
-                        button.draw()
-                        pygame.display.flip()
-                        pygame.time.wait(self.difficulty)
-                        button.light_off()
-                        button.draw()
-                        pygame.display.flip()
-                        pygame.time.wait(self.difficulty)
-                        sequencing = True
-                    sequencing = False
+                for button in button_chain:
+                    button.light_up()
+                    # button.draw()
+                    pygame.draw.rect(SIMONSCREEN, button.color, button)
+                    pygame.display.flip()
+                    pygame.time.wait(self.difficulty)
+                    button.light_off()
+                    # button.draw()
+                    pygame.draw.rect(SIMONSCREEN, button.color, button)
+                    pygame.display.flip()
+                    pygame.time.wait(self.difficulty)
                 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -64,11 +67,13 @@ class Controller:
                         if button.collidepoint(event.pos):
                             clicked_button = button
                             button.light_up()
-                            button.draw()
+                            # button.draw()
+                            pygame.draw.rect(SIMONSCREEN, button.color, button)
                             pygame.display.flip()
                             pygame.time.wait(200)
                             button.light_off()
-                            button.draw()
+                            # button.draw()
+                            pygame.draw.rect(SIMONSCREEN, button.color, button)
                             pygame.display.flip()
                             if clicked_button != current_button_chain[0]: 
                                 playing = False
@@ -79,7 +84,11 @@ class Controller:
                                     button_chain.append(random.choice(buttons))
                                     player.points += 1
                                     player.update()
+                                    SIMONSCREEN.fill(("black"), (WIDTH/13,10,250,25))
+                                    SIMONSCREEN.blit(player.text, (WIDTH/13,10))
                                     player.updatehighscore()
+                                    SIMONSCREEN.fill(("black"), (WIDTH/2 + WIDTH/13, 10, 250,25))
+                                    SIMONSCREEN.blit(player.text, (WIDTH/2 + WIDTH/13,10))
                                     new_sequence = True
             pygame.display.update()
             self.clock.tick(60)

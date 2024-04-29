@@ -24,12 +24,15 @@ class Button():
         return self.rect.collidepoint(pos)
     def light_up(self):
         """
-        Lights up the Button object to a brighter color and turns it off after a delay.
+        Changes the color of the button to the lit up color.
         """
         for color in OFFCOLORS:
             if self.color == color:
                 self.color = ONCOLORS[OFFCOLORS.index(color)]
     def light_off(self):
+        """
+        Changes the color of the button to the turned off color.
+        """
         for color in ONCOLORS:
             if self.color == color:
                 self.color = OFFCOLORS[ONCOLORS.index(color)]
