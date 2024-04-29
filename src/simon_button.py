@@ -5,13 +5,6 @@ class Button():
     def __init__(self,color,x,y,w=(WIDTH/13)*5,h=(HEIGHT/13)*5):
         self.rect = pygame.Rect(x,y,w,h)
         self.color = color
-    def draw(self, screen=SIMONSCREEN):
-        """
-        Draws a Button object onto the pygame window.
-        Args:
-            screen (Surface):pygame Surface drawn onto. Defaults to SIMONSCREEN.
-        """
-        pygame.draw.rect(screen, self.color, self.rect)
     def collidepoint(self, pos):
         """
         Makes collidepoint accessible to Button objects.

@@ -22,8 +22,6 @@ class SimonScore:
         """
         new_score = str(self.points)
         self.text = FONT.render(self.text1 + new_score, True, "white")
-        # SIMONSCREEN.fill(("black"), (WIDTH/13,10,250,25))
-        # SIMONSCREEN.blit(text, (WIDTH/13,10))
         
     def updatehighscore(self):
         """
@@ -39,6 +37,4 @@ class SimonScore:
         f = open("src/highscore.txt", "r")
         new_high = f.read()
         self.text = FONT.render((self.text2 + new_high), True, "white")
-        # SIMONSCREEN.fill(("black"), (WIDTH/2 + WIDTH/13, 10, 250,25))
-        # SIMONSCREEN.blit(self.text, (WIDTH/2 + WIDTH/13,10))
         

@@ -7,7 +7,7 @@ from src.simonscore import SimonScore
 class Controller:
     def __init__(self):
         self.clock = pygame.time.Clock()
-        self.difficulty = 200
+        self.difficulty = 550
 
         
         
@@ -26,7 +26,6 @@ class Controller:
         green_button = Button(OFFGREEN, (WIDTH/2 + WIDTH/13),(HEIGHT/2 + HEIGHT/18))
         buttons = [red_button,blue_button,yellow_button,green_button]
         for button in buttons:
-            # button.draw()
             pygame.draw.rect(SIMONSCREEN, button.color, button)
         player = SimonScore()
         player.update()
@@ -39,23 +38,22 @@ class Controller:
         current_button_chain = button_chain
         new_sequence = True
         playing = True
+        pygame.display.flip()
         while(playing):
             if new_sequence:
                 # Displays new sequence of buttons
                 current_button_chain = button_chain[:]
                 new_sequence = False
-                pygame.time.wait(1000)
+                pygame.time.wait(500)
                 for button in button_chain:
+                    pygame.time.wait(self.difficulty)
                     button.light_up()
-                    # button.draw()
                     pygame.draw.rect(SIMONSCREEN, button.color, button)
                     pygame.display.flip()
                     pygame.time.wait(self.difficulty)
                     button.light_off()
-                    # button.draw()
                     pygame.draw.rect(SIMONSCREEN, button.color, button)
                     pygame.display.flip()
-                    pygame.time.wait(self.difficulty)
                 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -67,12 +65,10 @@ class Controller:
                         if button.collidepoint(event.pos):
                             clicked_button = button
                             button.light_up()
-                            # button.draw()
                             pygame.draw.rect(SIMONSCREEN, button.color, button)
                             pygame.display.flip()
                             pygame.time.wait(200)
                             button.light_off()
-                            # button.draw()
                             pygame.draw.rect(SIMONSCREEN, button.color, button)
                             pygame.display.flip()
                             if clicked_button != current_button_chain[0]: 
@@ -98,7 +94,7 @@ class Controller:
         A Play and Quit button are shown on it to start the game or exit the program. 
         A difficulty option is given to decide the speed the sequence plays out.
         """
-        menu = pygame_menu.Menu('Simon Says', 600, 400,
+        menu = pygame_menu.Menu('Simon Says', 600, 600,
         theme=pygame_menu.themes.THEME_GREEN)
         menu.add.button('Play', self.simongameloop)
         menu.add.selector('Difficulty :', [('Easy', 1), ('Medium', 2), ('Hard', 3)], onchange=self.set_difficulty)
