@@ -47,10 +47,8 @@ Memorize the pattern of the buttons and repeat it. Every completion the pattern 
 
 - Button:
     - initializes the 4 buttons and handles lighting them on/off 
-  SimonScore:
-    - handles current score tracking and writing/reading highscore file for tracking.
-  Utility:
-    - holds constants
+- SimonScore:
+  - handles current score tracking and writing/reading highscore file for tracking.
 
 ## ATP
 
