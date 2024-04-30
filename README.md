@@ -42,6 +42,7 @@ Memorize the pattern of the buttons and repeat it. Every completion the pattern 
 3. obstacle collisions  
 4. game over screen
 5. Points and Highscore tracker
+- Data Permanence Feature: A highscore.txt file is used to save and retrieve the user's highscore in the Simon game.
 
 ### Classes
 
