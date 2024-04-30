@@ -20,8 +20,8 @@ class SimonScore:
         """
         Rewrites and Displays new score to the score counter on screen.
         """
-        new_score = str(self.points)
-        self.text = FONT.render(self.text1 + new_score, True, "white")
+        self.new_score = str(self.points)
+        # self.text = FONT.render(self.text1 + self.new_score, True, "white")
         
     def updatehighscore(self):
         """
@@ -35,6 +35,6 @@ class SimonScore:
             f.write(str(self.points))
             f.close()
         f = open("src/highscore.txt", "r")
-        new_high = f.read()
-        self.text = FONT.render((self.text2 + new_high), True, "white")
+        self.new_high = f.read()
+        # self.text = FONT.render((self.text2 + self.new_high), True, "white")
         

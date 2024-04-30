@@ -30,6 +30,11 @@ Memorize the pattern of the buttons and repeat it. Every completion the pattern 
 
 ## Program Design
 
+### Additional Modules
+  - Pygame-menu: https://pygame-menu.readthedocs.io/en/latest/#
+   - Used for creating the start menu of the game.
+
+
 ### Features
 
 1. Buttons to click
@@ -72,7 +77,7 @@ Memorize the pattern of the buttons and repeat it. Every completion the pattern 
       - Buttons should light up and turn off in a sequence.
       - Click buttons according to the sequence
       - If clicked in correct order, it will move to a new sequence with one additional button and increase total points by 1.
-      - If clicked in incorrect order, it will display game over menu.
+      - If clicked in incorrect order, it will return to start menu.
     **Expected Outcome**: Clicking buttons in the order that light up should increase points by 1 and increase the next sequence by one button.
 ### Test 4: Verify Start Menu works
     Steps:
@@ -88,8 +93,7 @@ Memorize the pattern of the buttons and repeat it. Every completion the pattern 
       - Start the game
       - Click play on start menu
       - Input the sequence wrong.
-      - Verify simon game ends and game start menu pops up with total points from that round.
       - Verify clicking Quit end the program.
-      - Verify clicking Retry starts the simon game again.
-    **Expected Outcome**: Losing a game shows the game over menu. Clicking Retry starts game again, clicking quit ends the program, total pointws displays correctly. 
+      - Verify clicking Play starts the game again.
+    **Expected Outcome**: Losing a game displays the start menu. All buttons should work like the start menu. Choosing a different difficulty from the previous should change speed. 
 

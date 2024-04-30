@@ -7,11 +7,12 @@ from src.simonscore import SimonScore
 class Controller:
     def __init__(self):
         self.clock = pygame.time.Clock()
-        self.difficulty = 550
+        self.difficulty = 500
 
-        
-        
     def mainloop(self):
+        """
+        Mainloop that runs the menuloop and the simongameloop in Controller class.
+        """
         Controller.menuloop(self)
         Controller.simongameloop(self)        
         
@@ -29,11 +30,13 @@ class Controller:
             pygame.draw.rect(SIMONSCREEN, button.color, button)
         player = SimonScore()
         player.update()
+        self.text = FONT.render(player.text1 + player.new_score, True, "white")
         SIMONSCREEN.fill(("black"), (WIDTH/13,10,250,25))
-        SIMONSCREEN.blit(player.text, (WIDTH/13,10))
+        SIMONSCREEN.blit(self.text, (WIDTH/13,10))
         player.updatehighscore()
+        self.text = FONT.render((player.text2 + player.new_high), True, "white")
         SIMONSCREEN.fill(("black"), (WIDTH/2 + WIDTH/13, 10, 250,25))
-        SIMONSCREEN.blit(player.text, (WIDTH/2 + WIDTH/13,10))
+        SIMONSCREEN.blit(self.text, (WIDTH/2 + WIDTH/13,10))
         button_chain =[random.choice(buttons)]
         current_button_chain = button_chain
         new_sequence = True
@@ -80,11 +83,13 @@ class Controller:
                                     button_chain.append(random.choice(buttons))
                                     player.points += 1
                                     player.update()
+                                    self.text = FONT.render(player.text1 + player.new_score, True, "white")
                                     SIMONSCREEN.fill(("black"), (WIDTH/13,10,250,25))
-                                    SIMONSCREEN.blit(player.text, (WIDTH/13,10))
+                                    SIMONSCREEN.blit(self.text, (WIDTH/13,10))
                                     player.updatehighscore()
+                                    self.text = FONT.render((player.text2 + player.new_high), True, "white")
                                     SIMONSCREEN.fill(("black"), (WIDTH/2 + WIDTH/13, 10, 250,25))
-                                    SIMONSCREEN.blit(player.text, (WIDTH/2 + WIDTH/13,10))
+                                    SIMONSCREEN.blit(self.text, (WIDTH/2 + WIDTH/13,10))
                                     new_sequence = True
             pygame.display.update()
             self.clock.tick(60)
@@ -104,9 +109,9 @@ class Controller:
         """
         Function to set the difficulty level based on the selected option.
         """
-        if value == 1:
-            self.difficulty = 550  # Easy
-        elif value == 2:
-            self.difficulty = 300  # Medium
-        elif value == 3:
-            self.difficulty = 50  # Hard
+        if value == (('Easy', 1), 0):
+            self.difficulty = 500  # Easy
+        elif value == (('Medium', 2), 1):
+            self.difficulty = 270  # Medium
+        elif value == (('Hard', 3), 2):
+            self.difficulty = 160  # Hard

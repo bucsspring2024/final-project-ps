@@ -5,7 +5,7 @@ pygame.font.init()
 FONT = pygame.font.Font('freesansbold.ttf', 30)
 WIDTH, HEIGHT = 600,600
 SIMONSCREEN = pygame.display.set_mode((WIDTH,HEIGHT))
-OFFRED = (134,36,36)
+OFFRED = (134,36,6)
 ONRED = (255,56,56)
 OFFBLUE = (30,95,144)
 ONBLUE = (38,116,255)
