@@ -99,7 +99,7 @@ class Controller:
         A Play and Quit button are shown on it to start the game or exit the program. 
         A difficulty option is given to decide the speed the sequence plays out.
         """
-        menu = pygame_menu.Menu('Simon Says', 600, 600,
+        menu = pygame_menu.Menu('Simon', 600, 600,
         theme=pygame_menu.themes.THEME_GREEN)
         menu.add.button('Play', self.simongameloop)
         menu.add.selector('Difficulty :', [('Easy', 1), ('Medium', 2), ('Hard', 3)], onchange=self.set_difficulty)
