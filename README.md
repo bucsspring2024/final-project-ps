@@ -13,7 +13,7 @@ Parker Schafer
 
 ## Project Description
 
-Memorize the pattern of the buttons and repeat it. Every completion the pattern gets longer.
+Memorize the pattern of the buttons and repeat it. Every completion the pattern gets longer. You can change the speed of the pattern by choosing your difficulty on the start menu.
 
 ***    
 
