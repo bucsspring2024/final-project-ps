@@ -1,0 +1,17 @@
+import pygame
+
+# Simon Game
+pygame.font.init()
+FONT = pygame.font.Font('freesansbold.ttf', 30)
+WIDTH, HEIGHT = 600,600
+SIMONSCREEN = pygame.display.set_mode((WIDTH,HEIGHT))
+OFFRED = (134,36,6)
+ONRED = (255,56,56)
+OFFBLUE = (30,95,144)
+ONBLUE = (38,116,255)
+OFFYELLOW = (144, 144, 0)
+ONYELLOW = (240, 240, 0)
+OFFGREEN = (0, 139, 0)
+ONGREEN = (0, 230, 0)
+OFFCOLORS = [OFFRED,OFFBLUE,OFFYELLOW,OFFGREEN]
+ONCOLORS = [ONRED,ONBLUE,ONYELLOW,ONGREEN]
